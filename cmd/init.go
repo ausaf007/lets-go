@@ -10,8 +10,9 @@ import (
 )
 
 var initCmd = &cobra.Command{
-	Use:   "init <project-name>",
-	Short: "Initialize a new Go server project",
+	Use:     "init <project-name>",
+	Aliases: []string{"initialize", "initialise", "create"},
+	Short:   "Initialize a new Go server project",
 	Long: `
 The 'init' command of 'lets-go' helps developers quickly scaffold a new Go server project with essential packages pre-configured.
 
