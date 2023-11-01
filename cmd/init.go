@@ -2,11 +2,10 @@ package cmd
 
 import (
 	"fmt"
+	"github.com/spf13/cobra"
 	"os"
 	"os/exec"
 	"path/filepath"
-
-	"github.com/spf13/cobra"
 )
 
 var initCmd = &cobra.Command{
@@ -44,6 +43,8 @@ The goal is to provide a fast and streamlined process for setting up new Go back
 
 		// Step 4: Install SQLC
 		execCmd("", "go", "install", "github.com/sqlc-dev/sqlc/cmd/sqlc@latest")
+
+		setupProjectStructure(projectName)
 	},
 }
 
@@ -58,6 +59,49 @@ func execCmd(dir string, command string, args ...string) {
 	}
 
 	fmt.Println(string(output))
+}
+
+func setupProjectStructure(projectName string) {
+	dirs := []string{
+		"api/handlers",
+		"api/middlewares",
+		"api/routes",
+		"cmd",
+		"db/migrations",
+		"db/datastore",
+		"db/queries",
+		"docs",
+		"pkg/configs",
+		"pkg/utils",
+	}
+
+	for _, dir := range dirs {
+		fullPath := filepath.Join(projectName, dir)
+		err := os.MkdirAll(fullPath, 0755)
+		if err != nil {
+			fmt.Printf("Failed to create directory %s: %s\n", fullPath, err)
+		}
+	}
+
+	files := []string{
+		"api/handlers/user.go",
+		"api/middlewares/logging.go",
+		"cmd/main.go",
+		"db/migrations/schema.sql",
+		"db/queries/user.sql",
+		"sqlc.yaml",
+		".env.sample",
+	}
+
+	for _, file := range files {
+		fullPath := filepath.Join(projectName, file)
+		_, err := os.Create(fullPath)
+		if err != nil {
+			fmt.Printf("Failed to create file %s: %s\n", fullPath, err)
+		}
+	}
+
+	// TODO: Add boilerplate code to files
 }
 
 func init() {
