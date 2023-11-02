@@ -1,8 +1,8 @@
 <p align="center">
   <a href="https://github.com/setup-go/lets-go">
     <picture>
-      <source height="125" media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/setup-go/lets-go/master/docs/logo/Dark_Mode.png">
-      <img height="125" alt="Logo" src="https://raw.githubusercontent.com/setup-go/lets-go/master/docs/logo/Light_Mode.png">
+      <source height="250" media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/setup-go/lets-go/master/docs/logo/Dark_Mode.png">
+      <img height="250" alt="Logo" src="https://raw.githubusercontent.com/setup-go/lets-go/master/docs/logo/Light_Mode.png">
     </picture>
   </a>
   <br>
