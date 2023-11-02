@@ -5,8 +5,6 @@
       <img height="250" alt="Logo" src="https://raw.githubusercontent.com/setup-go/lets-go/master/docs/logo/Light_Mode.png">
     </picture>
   </a>
-  <br>
-
 </p>
 
 <p align="center">
