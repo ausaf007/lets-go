@@ -1,4 +1,4 @@
-module github.com/setup-go/lets-go
+module github.com/ausaf007/lets-go
 
 go 1.21.1
 

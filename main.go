@@ -1,6 +1,6 @@
 package main
 
-import "github.com/setup-go/lets-go/cmd"
+import "github.com/ausaf007/lets-go/cmd"
 
 func main() {
 	cmd.Execute()
